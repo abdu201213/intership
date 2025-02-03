@@ -29,7 +29,7 @@ const SignUP = () => {
         return;
       }
 
-      const response = await axios.post('http://localhost:3000/api/signin', formData);
+      const response = await axios.post('https://intership-1.onrender.com/api/signin', formData);
 
       if (response.status === 409) {
         setMessage('User already exists');
