@@ -47,7 +47,7 @@ export const CSVProvider = ({ children }) => {
     formData.append("file", file);
 
     try {
-      const response = await axios.post("http://localhost:3000/api/upload", formData, {
+      const response = await axios.post("https://intership-1.onrender.com/api/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
