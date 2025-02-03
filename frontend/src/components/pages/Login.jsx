@@ -26,7 +26,7 @@ const SignIn = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/api/login", formData);
+      const response = await axios.post("https://intership-1.onrender.com/api/login", formData);
 
       // Handle different error responses from the API
       if (response.status === 404) {
