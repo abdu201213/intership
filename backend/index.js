@@ -11,10 +11,10 @@ const port = process.env.PORT || 5000;
 
 const __dirname = path.resolve();
 
-app.use(express.static(path.join(__dirname, "/frontend/dist")));
+app.use(express.static(path.join(__dirname, "/frontend")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "frontend","index.html"));
 });
 // Middleware
 app.use(express.json()); // Parse JSON bodies
