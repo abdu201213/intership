@@ -4,10 +4,18 @@ import uploadFile from "./routes/uploadFile.route.js";
 import authRouter from "./routes/auth.route.js";
 import db from './db/connect.js';
 import dotenv from 'dotenv';
+import path from "path";
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
+const __dirname = path.resolve();
+
+app.use(express.static(path.join(__dirname, "/client/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+});
 // Middleware
 app.use(express.json()); // Parse JSON bodies
 app.use(cors({
